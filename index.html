@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>MoonWatcher</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#6b93af">
+		<meta name="msapplication-TileColor" content="#6b93af">
+		<meta name="theme-color" content="#6b93af">
+		<link rel="stylesheet" href="style/normalize.css" />
+		<link rel="stylesheet" href="style/screen.css" />
+		<link rel="stylesheet" href="style/app.css" />
+		<script src="./scripts/Main.js"></script>
+		<meta name="description" content="This is my MoonWatcher app" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<body class="">
+		<section class="c-spacer"></section>
+
+		<section class="c-main-img c-moon-container">
+			<div class="e-reserve-space">
+				<img id="js-Third-moon" class="c-moon" src="./img/moonsvg/LastQuarter.png" alt="Third-Moon" />
+				<img id="js-Waning-Crescent-moon" class="c-moon" src="./img/moonsvg/WaningCrescent.png" alt="Waning-Crescent" />
+				<img id="js-New-moon" class="c-moon" src="./img/moonsvg/NewMoon.png" alt="New-moon" />
+				<img id="js-Waxing-Crescent-moon" class="c-moon" src="./img/moonsvg/WaxingCrescent.png" alt="Waxing-Crescent-moon" />
+				<img id="js-First-moon" class="c-moon" src="./img/moonsvg/FirstQuarter.png" alt="First-moon" />
+				<img id="js-Waxing-Gibbous-moon" class="c-moon" src="./img/moonsvg/WaxingGibbous.png" alt="Waxing-Gibbous-moon" />
+				<img id="js-Full-moon" class="c-moon" src="./img/moonsvg/FullMoon.png" alt="Full-moon" />
+				<img id="js-Waning-Gibbous-moon" class="c-moon" src="./img/moonsvg/WaningGibbous.png" alt="Gibbous-moon" />
+			</div>
+			<div id="js-moontype" class="o-row-s js-moonType"></div>
+		</section>
+
+		<section class="o-container o-row-xs">
+			<div id="js-nextUpType" class="c-nextup"></div>
+		</section>
+
+		<section class="o-container o-row-xl">
+			<section class="o-dp-flex">
+				<div id="js-c-button-y-d" class="o-padding-16 c-button noselect">
+					&lt
+				</div>
+				<div class="js-year"></div>
+				<div id="js-c-button-y-u" class="o-padding-16 c-button noselect">
+					&gt
+				</div>
+			</section>
+			<section class="o-row-s o-dp-flex">
+				<div id="js-c-button-m-d" class="o-padding-16 c-button noselect">&lt</div>
+				<div class="js-month"></div>
+				<div id="js-c-button-m-u" class="o-padding-16 c-button noselect">
+					&gt
+				</div>
+			</section>
+
+			<section class="o-row-s o-dp-flex">
+				<div id="js-c-button-d-d" class="o-padding-16 c-button noselect">&lt</div>
+				<div class="js-day"></div>
+				<div id="js-c-button-d-u" class="o-padding-16 c-button noselect">
+					&gt
+			</section>
+
+			<section>
+				<div id="js-reset-date" class="o-row-l o-padding-16 c-button-text noselect">Reset Date</div>
+			</section>
+		</section>
+		<a class="footer" href="https://www.vecteezy.com/"> Vectors by Vecteezy</a>
+	</body>
+</html>

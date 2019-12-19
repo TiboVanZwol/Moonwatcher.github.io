@@ -1,0 +1,362 @@
+@font-face {
+	font-family: 'Inter Ui';
+	font-weight: 100;
+	src: url('../fonts/Inter-UI-Regular.otf') format('otf');
+}
+
+:root {
+	--global-color-background: rgb(107, 147, 175);
+	--global-color-gradient-1: rgba(107, 147, 175, 1);
+	--global-color-gradient-2: rgba(32, 39, 42, 1);
+	--global-html-color: white;
+	--global-html-color-transparent: rgba(255, 255, 255, 0.5);
+
+	--global-color-neutral-xxxx-light: #f5f6fa;
+	--global-color-neutral-xxx-light: #e2e3e7;
+	
+	--global-color-alpha-dark: rgba(107, 147, 175, 1);
+	--global-color-alpha: rgba(72, 79, 82, 1);;
+
+	--global-whitespace: 32px;
+	--global-whitespace-btn:8px;
+	--global-whitespace-s: 20px;
+	--global-whitespace-md:16px;
+	--global-whitespace-xs: 8px;
+	--global-whitespace-l: 64px;
+	--global-whitespace-xl: 96px;
+
+	--global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+	--global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
+
+	--global-transitionTiming-alpha: 0.1s ease-out;
+	
+}
+
+.LightTheme {
+
+	--global-color-background: rgb(223, 239, 250);
+	--global-color-gradient-1: rgb(223, 239, 250);
+	--global-color-gradient-2: rgb(166, 190, 201);
+	--global-html-color: black;
+	color: black;
+	--global-html-color-transparent: rgba(27, 27, 27, 0.8);
+	--global-color-alpha:#ffffff;
+
+
+}
+
+html {
+	font-size: 20px;
+	font-family: 'Inter Ui', Helvetica, arial, sans-serif;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--global-html-color);
+}
+
+body {
+	/*background-image: url("../img/bg.png");*/
+	background: var(--global-color-background);
+	background: linear-gradient(var(--global-color-gradient-1) 0%, var(--global-color-gradient-2) 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+::selection {
+	background: #eeeeee; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: #eeeeee; /* Gecko Browsers */
+}
+
+a {
+	font: inherit;
+	color: inherit;
+}
+
+.o-dp-flex {
+	display: flex;
+	justify-content: center;
+}
+
+.o-padding-16 {
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.o-row {
+	padding-top: var(--global-whitespace);
+}
+
+.o-row-s {
+	padding-top: var(--global-whitespace-s);
+}
+
+.o-row-xs {
+	padding-top: var(--global-whitespace-xs);
+}
+
+.o-row-l {
+	padding-top: var(--global-whitespace-l);
+}
+
+.o-row-xl {
+	padding-top: var(--global-whitespace-xl);
+}
+
+.o-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	text-align: center;
+}
+
+.o-hide-accessible {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Components 
+-------------------------------------------------------
+*/
+
+.c-spacer {
+	width: 100vw;
+	height: 10vh;
+	display: block;
+}
+
+.c-moon-container {
+	width: 100vw;
+	display: block;
+	text-align: center;
+}
+
+.c-moon {
+	/* display: inline-block; */
+
+	width: 25vh;
+	height: 25vh;
+	transition: all 0.15s ease-in-out;
+	display: none;
+}
+.c-nextup {
+	color: var(--global-html-color-transparent);
+	font-size: 16px;
+}
+.c-button {
+	transition: all 0.15s ease-in-out;
+	cursor: pointer;
+	fill: #eeeeee;
+	transform: scale(1.8);
+}
+
+.c-button-text {
+	transition: all 0.15s ease-in-out;
+	cursor: pointer;
+	font-size: inherit;
+	vertical-align: middle;
+}
+.footer {
+	position: absolute;
+	font-size: 8px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	text-align: right;
+}
+
+
+/*
+    Component: Custom Toggle
+    ---
+    Visually change a checkbox into a toggle
+*/
+
+.c-custom-toggle-list {
+	--toggle-list-borderColor: var(--global-color-neutral-xxx-light);
+	margin-bottom: var(--global-whitespace-btn);
+}
+
+.c-custom-toggle-list__item {
+	margin-bottom: calc(var(--global-whitespace-btn) / 2);
+}
+
+.c-custom-toggle-list__item + .c-custom-toggle-list__item {
+	padding-top: calc(var(--global-whitespace-btn) / 2);
+	border-top: 1px solid var(--toggle-list-borderColor);
+}
+
+.c-custom-toggle {
+	--toggle-backgroundColor: var(--global-color-neutral-xxxx-light);
+	--toggle-checked-borderColor: var(--global-color-alpha-dark);
+	--toggle-checked-backgroundColor: var(--global-color-alpha);
+	--toggle-focus-boxShadow: var(--global-input-focus-boxShadow);
+	--toggle__switch-backgroundColor: White;
+	--toggle__switch-checked-backgroundColor: #666666;
+	--toggle__switch-transition: all var(--global-transitionTiming-alpha);
+	display: flex;
+	align-items: center;
+}
+
+.c-custom-toggle--inverted {
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+
+.c-custom-toggle__fake-input {
+	display: block;
+	height: 24px;
+	width: 48px;
+	margin-right: var(--global-whitespace-md);
+	background-color: var(--toggle-backgroundColor);
+	border-radius: 32px;
+	border: var(--global-borderWidth) solid var(--toggle-borderColor, var(--global-input-borderColor));
+	transition: all var(--global-transitionTiming-alpha);
+	box-shadow: var(--toggle-boxShadow, 0);
+}
+
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
+	margin-right: 0;
+}
+
+.c-custom-toggle__fake-input::after {
+	position: relative;
+	display: block;
+	content: '';
+	height: 22px;
+	width: 22px;
+	border-radius: 22px;
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+	background-color: var(--toggle__switch-backgroundColor);
+	transition: var(--toggle__switch-transition);
+}
+
+@media(min-width: 900px){
+	.c-toggle-position{
+		position: absolute;
+		right: 64px;
+		top:64px;
+	}
+	.c-micro-inter-position{
+		position: absolute;
+		right: 149px;
+		top:90px;
+		font-size:12px; 
+		z-index: 1111;
+	}
+	.c-micro-popup{
+		width: 120px;
+		height: 100px,;
+		position: absolute;
+		right: -20px;
+		top:-18px;	
+		z-index: -1111;
+		fill: var(--global-color-alpha);		
+	}
+	
+}
+
+@media only screen and (max-width: 900px) {
+	.c-toggle-position{
+		position: absolute;
+		right: calc(var(--global-whitespace-xs)/2);
+		top:calc(var(--global-whitespace-xs)/2);
+		transform: scale(1.5);
+	}
+	.c-micro-inter-position{
+		position: absolute;
+		right: 96px;
+		top:30px;
+		font-size:12px;
+		z-index: 1111;
+	}
+	.c-micro-popup{ 
+		z-index: -1111;
+		width: 100px;
+		height: 40px,;
+		position: absolute;
+		right: -11px;
+		top:-14px;	
+		fill: var(--global-color-alpha);	
+	}
+}
+
+
+
+
+/* focused and active state */
+
+.c-option--hidden:focus + .c-custom-toggle,
+.c-option--hidden:active + .c-custom-toggle {
+	--toggle-borderColor: var(--global-input-focus-borderColor);
+	--toggle-boxShadow: var(--toggle-focus-boxShadow);
+}
+
+/* checked state */
+
+.c-option--hidden:checked + .c-custom-toggle {
+	--toggle-backgroundColor: var(--toggle-checked-backgroundColor);
+	--toggle-borderColor: var(--toggle-checked-borderColor);
+	--toggle__switch-backgroundColor: var(--toggle__switch-checked-backgroundColor);
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+	transform: translate(24px, 0);
+}
+
+/* special active state */
+
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
+	width: 28px;
+}
+
+.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+	margin-left: -6px;
+}
+
+/* Tooltip */
+
+
+
+
+
+
+/* Effects
+----------------------------------------------------------
+*/
+.e-reserve-space {
+	height: 26vh;
+}
+
+.c-moon:hover {
+	transform: scale(1.05);
+}
+
+.c-button:hover {
+	color: black;
+	font-size:20pt; 
+}
+
+.js-isVisible {
+	display: inline-block;
+}
